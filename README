@@ -1,1 +1,10 @@
+Example moosefs deployment using vagrant.
+
+Running on centos7 and using puppet for configuration deployment. 
+
 You will need https://github.com/kusnier/vagrant-persistent-storage plugin for this cluster
+
+Usage: well, not really tested all that much, but:
+
+    vagrant plugin install vagrant-persistent-storage
+    vagrant up 
