@@ -1,0 +1,5 @@
+---
+classes                           :
+                                    - moosefs::repo
+                                    - moosefs::common
+                                    - moosefs::mfsclient

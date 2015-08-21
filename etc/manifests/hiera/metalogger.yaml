@@ -1,0 +1,9 @@
+---
+classes                           :
+                                    - moosefs::repo
+                                    - moosefs::common
+                                    - moosefs::metalogger
+
+leciao_host_roles                 :
+                                    - dont_dnsmasq
+
