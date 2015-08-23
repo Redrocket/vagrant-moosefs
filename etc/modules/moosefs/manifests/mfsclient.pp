@@ -10,13 +10,19 @@ class moosefs::mfsclient{
     group   => 'mfs',
     require => Package['moosefs-chunkserver'],
   }
+  file {'/data/mfs':
+    ensure => directory,
+    owner  => 'mfs',
+    group  => 'mfs',
+    require => File['/mnt/sdb'],
+  }
   file {'/etc/mfs/mfshdd.cfg':
     ensure  => file,
     source  => 'puppet:///modules/moosefs/mfshdd.cfg',
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
-    require => File['/mnt/sdb'],
+    require => File['/data/mfs'],
   }
   service { 'moosefs-chunkserver':
     ensure  => 'running',

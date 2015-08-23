@@ -23,14 +23,14 @@ chunks = [
         :name => "chunk3",
         :eth1 => "#{subnet}.213",
     },
-    {
-        :name => "chunk4",
-        :eth1 => "#{subnet}.214",
-    },
-    {
-        :name => "chunk5",
-        :eth1 => "#{subnet}.215",
-    },
+#    {
+#        :name => "chunk4",
+#        :eth1 => "#{subnet}.214",
+#    },
+#    {
+#        :name => "chunk5",
+#        :eth1 => "#{subnet}.215",
+#    },
 ]
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
@@ -70,7 +70,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     metalogger.persistent_storage.filesystem = 'xfs'
     metalogger.persistent_storage.mountpoint = '/mnt/sdb'
     metalogger.vm.hostname = "metalogger"
-    metalogger.vm.network "public_network", bridge: 'eth1', ip: '#{subnet}.201', :netmask => '255.255.255.0'
+    metalogger.vm.network "public_network", bridge: adapter, ip: "#{subnet}.201", :netmask => netmask
 
     metalogger.vm.provision :puppet do |puppet|
       puppet.manifests_path = "etc/manifests"
