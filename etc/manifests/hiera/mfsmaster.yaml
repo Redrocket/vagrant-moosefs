@@ -1,10 +1,9 @@
 ---
 classes                           :
                                     - moosefs::repo
-                                    - moosefs::mfsmaster
                                     - moosefs::common
-#                                    - moosefs::user
-#                                    - moosefs::common
+                                    - moosefs::mfsmaster
+                                    - moosefs::mfscgi
 
 leciao_host_roles                 :
                                     - dont_dnsmasq

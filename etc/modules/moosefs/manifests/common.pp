@@ -10,8 +10,8 @@ class moosefs::common{
     require => File['/data'],
   }
   service { 'firewalld':
-    ensure => stopped,
-    enable => false,
+    ensure  => stopped,
+    enable  => false,
     require => Host['mfsmaster'],
   }
 }

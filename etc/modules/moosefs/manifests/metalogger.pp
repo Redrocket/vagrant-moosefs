@@ -1,6 +1,7 @@
+# Setup metalogger machine
 class moosefs::metalogger{
   package{ [ 'moosefs-metalogger' ]:
-    ensure => installed,
+    ensure  => installed,
     require => File ['/etc/yum.repos.d/moosefs.repo'],
   }
   service { 'moosefs-metalogger':

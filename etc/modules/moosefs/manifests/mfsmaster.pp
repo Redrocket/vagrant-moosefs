@@ -1,6 +1,7 @@
+# Setup mfs master machine
 class moosefs::mfsmaster{
-  package{ ['moosefs-master', 'moosefs-cli', 'moosefs-cgi', 'moosefs-cgiserv', 'httpd' ]:
-    ensure => installed,
+  package{ ['moosefs-master', 'moosefs-cli' ]:
+    ensure  => installed,
     require => File ['/etc/yum.repos.d/moosefs.repo'],
   }
   file{'/etc/mfs/mfsexports.cfg':

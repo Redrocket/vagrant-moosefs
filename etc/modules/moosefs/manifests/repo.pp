@@ -4,6 +4,6 @@ class moosefs::repo{
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    source  => 'puppet:///modules/moosefs/moosefs.repo',
+    source => 'puppet:///modules/moosefs/moosefs.repo',
   }
 }

@@ -5,9 +5,9 @@ class moosefs::mfsclient{
     require => Service['firewalld'],
   }
   file {'/mnt/sdb':
-    ensure => directory,
-    owner  => 'mfs',
-    group  => 'mfs',
+    ensure  => directory,
+    owner   => 'mfs',
+    group   => 'mfs',
     require => Package['moosefs-chunkserver'],
   }
   file {'/etc/mfs/mfshdd.cfg':
@@ -24,9 +24,9 @@ class moosefs::mfsclient{
     require => File['/etc/mfs/mfshdd.cfg'],
   }
   file { ['/mnt/mfs', '/mnt/mfsmeta/']:
-    ensure => directory,
-    owner  => 'mfs',
-    group  => 'mfs',
+    ensure  => directory,
+    owner   => 'mfs',
+    group   => 'mfs',
     require => Service['moosefs-chunkserver'],
   }
   exec {'mfsmount':
@@ -39,5 +39,4 @@ class moosefs::mfsclient{
     refreshonly => true,
     subscribe   => File['/mnt/mfsmeta'],
   }
- 
 }
