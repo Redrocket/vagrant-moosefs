@@ -1,0 +1,7 @@
+# Edit ../settings.yaml in order to customize vagrant settings outside of repository, i.e. no git difference
+
+network:
+  adapter: 'wlp3s0'
+  subnet:  '192.168.2'
+  netmask: '255.255.255.0'
+
