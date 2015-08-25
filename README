@@ -1,10 +1,14 @@
-Example moosefs deployment using vagrant.
+Example moosefs deployment using vagrant, guests running on centos7 and using puppet for configuration deployment. 
 
-Running on centos7 and using puppet for configuration deployment. 
+You can customize the network settings using settings.yaml, or outside of the repository using ../settings.yaml as override file.
+
+This should create in order, the master, metalogger, chunkservers. All should be registered to the master and ready to go. Chunkservers use two disks for storage, localstorage on sda, and a reboot persistant storage on sdb. For this deployment, the chunkservers are also the clients which mount the mfs filesystem. It should be easy to remodel that to another seutp. Web interface should be available on http://mfsmaster/mfs
+
+There are probably some issues, I know of some myself currently. I'm not sure yet though if those issues are to be considered deployment issues, or learning moosefs issues. This Vagrantfile provides me with a running cluster, where I can play with moosefs cli, testing things like destroying chunk servers or marking disks as broken.
 
 You will need https://github.com/kusnier/vagrant-persistent-storage plugin for this cluster
 
-Usage: well, not really tested all that much, but:
+Usage: 
 
     vagrant plugin install vagrant-persistent-storage
     vagrant up 
